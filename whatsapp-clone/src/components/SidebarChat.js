@@ -3,6 +3,7 @@ import "./SidebarChat.css"
 import { Avatar} from '@mui/material'
 import {addDoc, collection} from 'firebase/firestore'
 import db from '../firebase';
+import {Link} from 'react-router-dom'
 
 function SidebarChat({addNewChat,name,id}) {
     const collectionName = 'rooms';
@@ -22,6 +23,7 @@ function SidebarChat({addNewChat,name,id}) {
 
 
   return !addNewChat? (
+    <Link to={`/rooms/${id}`}>
     <div className='sidebarChat'>
         <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
         <div className='sidebarChat__info'>
@@ -29,6 +31,7 @@ function SidebarChat({addNewChat,name,id}) {
             <p>Last message...</p>
         </div>
     </div>
+    </Link>
   ) 
   : (
     <div className='sidebarChat' onClick={createChat}>

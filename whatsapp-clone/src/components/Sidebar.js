@@ -8,11 +8,13 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import SidebarChat from './SidebarChat';
 import { collection, onSnapshot } from "firebase/firestore";
 import db from '../firebase';
+import { useStateValue } from '../StateProvider';
 
 
 function Sidebar() {
     const collectionName = 'rooms';
     const [rooms, setRooms] = useState([]);
+    const [{user}] = useStateValue();
 
     // Getting Rooms from firestore
     useEffect(() => {
@@ -29,7 +31,7 @@ function Sidebar() {
     return (
         <div className='sidebar'>
             <div className='sidebar__header'>
-                <Avatar />
+                <Avatar src={user.photoURL} />
                 <div className='sidebar__headerRight'>
                     <IconButton>
                         <DonutLargeIcon />
