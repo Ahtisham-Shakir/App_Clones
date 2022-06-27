@@ -6,16 +6,16 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './pages/Home';
+import SearchPage from './pages/SearchPage';
 
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* <h1>Google Clone</h1> */}
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/search' element={<h1>This is Search page</h1>}/>
+          <Route path='/search' element={<SearchPage/>}/>
         </Routes>
         
       </div>
