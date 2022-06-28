@@ -24,7 +24,7 @@ function App() {
             <Router>
               <Sidebar />
               <Routes>
-                <Route path='/' element={<h1>Hello</h1>} />
+                <Route path='/' element={<></>} />
                 <Route path='/rooms/:roomId' element={<Chat />} />
               </Routes>
             </Router>
