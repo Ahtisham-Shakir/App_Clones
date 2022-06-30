@@ -14,21 +14,21 @@ function Home() {
 
                     <Product id={1} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://i.ibb.co/ZYW3VTp/brown-brim.png'} price={25} rating={5} />
 
-                    <Product id={1} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://i.ibb.co/ZYW3VTp/brown-brim.png'} price={25} rating={5} />
+                    <Product id={2} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://i.ibb.co/ZYW3VTp/brown-brim.png'} price={25} rating={5} />
                     
                 </div>
                 <div className='home__row'>
 
-                    <Product id={1} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg'} price={25} rating={5} />
+                    <Product id={3} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg'} price={25} rating={5} />
 
-                    <Product id={1} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?%24300x400_retinamobilex2%24'} price={25} rating={5} />
+                    <Product id={4} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?%24300x400_retinamobilex2%24'} price={25} rating={5} />
 
-                    <Product id={1} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://i.ibb.co/ZYW3VTp/brown-brim.png'} price={25} rating={5} />
+                    <Product id={5} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://i.ibb.co/ZYW3VTp/brown-brim.png'} price={25} rating={5} />
 
                 </div>
                 <div className='home__row'>
 
-                    <Product id={1} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://i.ibb.co/ZYW3VTp/brown-brim.png'} price={25} rating={5} />
+                    <Product id={6} title={'The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback'} image={'https://i.ibb.co/ZYW3VTp/brown-brim.png'} price={25} rating={5} />
 
                 </div>
             </div>
