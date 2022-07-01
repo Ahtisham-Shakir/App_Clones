@@ -1,7 +1,15 @@
+/* =========== Complete checkout Page container ============ */
+.checkout{
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    height: max-content;
+}
+
 /* ========= ad image ========== */
 .checkout__ad{
     width: 100%;
-    height: 250px;
+    height: 200px;
     margin-bottom: 15px;
 }
 

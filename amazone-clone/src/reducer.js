@@ -1,6 +1,9 @@
 export const initialState = {
-    basket: []
+    basket: [],
+    user: null
 }
+
+export const getBasketTotal = (basket) => basket?.reduce((amount, item) => item.price + amount, 0);
 
 function reducer(state, action) {
     console.log(action);
@@ -16,13 +19,13 @@ function reducer(state, action) {
 
             const index = state.basket.findIndex(basketItem => basketItem.id === action.id);
 
-            if(index >= 0){
+            if (index >= 0) {
                 // item exits remvove it
-                newBasket.splice(index,1);
-            }else{
-                console.warn("item id:",action.id, " is not exist");
+                newBasket.splice(index, 1);
+            } else {
+                console.warn("item id:", action.id, " is not exist");
             }
-            return {...state, basket:newBasket}
+            return { ...state, basket: newBasket }
 
         default:
             return state;
