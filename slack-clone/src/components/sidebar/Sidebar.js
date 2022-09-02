@@ -21,9 +21,12 @@ import SidebarOption from "../sidebarOptions/SidebarOption";
 // Firebase imports
 import db from "../../firebaseConfig";
 import { collection, onSnapshot } from "firebase/firestore";
+import { useStateValue } from "../../StateProvider";
 
 export default function Sidebar() {
   const [channels, setChannels] = useState([]);
+
+  const [{ user }] = useStateValue();
 
   useEffect(() => {
     const collectionRef = collection(db, "rooms");
@@ -44,7 +47,7 @@ export default function Sidebar() {
           <h2>MERN Stack</h2>
           <h3>
             <FiberManualRecordIcon />
-            Ahtisham Shakir
+            {user?.displayName}
           </h3>
         </div>
         <CreateIcon />

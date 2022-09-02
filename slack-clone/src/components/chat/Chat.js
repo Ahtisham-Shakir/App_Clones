@@ -18,6 +18,7 @@ import {
   query,
 } from "firebase/firestore";
 import Message from "../message/Message";
+import ChatInput from "../chatInput/ChatInput";
 
 export default function Chat() {
   const [roomDetails, setRoomDetails] = useState("");
@@ -58,8 +59,9 @@ export default function Chat() {
         </div>
       </div>
       <div className="chat__messages">
-        {messages.map(({ message, timestamp, user, userImage }) => (
+        {messages.map(({ message, timestamp, user, userImage }, i) => (
           <Message
+            key={i}
             message={message}
             timestamp={timestamp}
             user={user}
@@ -67,6 +69,7 @@ export default function Chat() {
           />
         ))}
       </div>
+      <ChatInput channelName={roomDetails?.name} channelId={roomId} />
     </div>
   );
 }
