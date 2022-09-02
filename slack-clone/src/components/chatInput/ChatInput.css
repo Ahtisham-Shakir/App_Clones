@@ -17,6 +17,10 @@
   padding: 20px;
 }
 
+.chatInput > form > input:focus {
+  outline-color: #421f44;
+}
+
 .chatInput > form > button {
   display: none !important;
 }

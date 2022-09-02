@@ -34,3 +34,14 @@
   margin-right: 5px;
   font-size: 16px;
 }
+
+/* hide scrollbar for chrome safari and opera */
+.chat::-webkit-scrollbar {
+  display: none;
+}
+
+/* hide scrollbar for IE Edge and firefox  */
+.chat {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

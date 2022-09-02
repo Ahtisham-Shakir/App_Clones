@@ -4,6 +4,7 @@
   max-width: 260px;
   color: white;
   flex: 0.3;
+  overflow-y: scroll;
 }
 
 .sidebar__header {
@@ -48,4 +49,15 @@
 .sidebar > hr {
   margin: 10px 0;
   border: 1px solid #49274b;
+}
+
+/* hide scrollbar for chrome safari and opera */
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* hide scrollbar for IE Edge and firefox  */
+.sidebar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

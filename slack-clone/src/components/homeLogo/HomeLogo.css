@@ -1,0 +1,9 @@
+.homeLogo {
+  display: grid;
+  place-items: center;
+  flex: 0.7;
+}
+
+.homeLogo > img {
+  height: 230px;
+}

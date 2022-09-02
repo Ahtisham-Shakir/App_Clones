@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat";
 import Login from "./login/Login";
 import { useStateValue } from "./StateProvider";
+import HomeLogo from "./components/homeLogo/HomeLogo";
 
 function App() {
   // const [user, setUser] = useState(null);
@@ -25,7 +26,7 @@ function App() {
                 <Route path="/room/:roomId" element={<Chat />} />
               </Routes>
               <Routes>
-                <Route path="/" element={<h1>Welcome</h1>} />
+                <Route path="/" element={<HomeLogo />} />
               </Routes>
             </Router>
           </div>

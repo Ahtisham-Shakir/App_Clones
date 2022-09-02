@@ -35,6 +35,11 @@
   border: none;
   text-align: center;
   min-width: 35vw;
+  color: white;
+}
+
+.header__search > input:focus {
+  outline: none;
 }
 
 .header__right {
