@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Chat.css";
 
 // react-router-dom imports
@@ -10,15 +10,43 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 // firebase imports
 import db from "../../firebaseConfig";
+import {
+  collection,
+  doc,
+  onSnapshot,
+  orderBy,
+  query,
+} from "firebase/firestore";
+import Message from "../message/Message";
 
 export default function Chat() {
+  const [roomDetails, setRoomDetails] = useState("");
+  const [messages, setMessages] = useState([]);
+
   const { roomId } = useParams();
+
+  useEffect(() => {
+    if (roomId) {
+      const docRef = doc(db, "rooms", roomId);
+      onSnapshot(docRef, (snapshot) => {
+        setRoomDetails(snapshot.data());
+      });
+    }
+
+    const collectionRef = collection(db, "rooms", roomId, "messages");
+    const q = query(collectionRef, orderBy("timestamp", "asc"));
+    onSnapshot(q, (snapshot) => {
+      setMessages(snapshot.docs.map((doc) => doc.data()));
+    });
+  }, [roomId]);
+  console.log(messages);
+
   return (
     <div className="chat">
       <div className="chat__header">
         <div className="chat__headerLeft">
           <h4 className="chat__channelName">
-            <strong>#General</strong>
+            <strong>#{roomDetails?.name}</strong>
             <StarBorderOutlinedIcon />
           </h4>
         </div>
@@ -28,6 +56,16 @@ export default function Chat() {
             Details
           </p>
         </div>
+      </div>
+      <div className="chat__messages">
+        {messages.map(({ message, timestamp, user, userImage }) => (
+          <Message
+            message={message}
+            timestamp={timestamp}
+            user={user}
+            userImage={userImage}
+          />
+        ))}
       </div>
     </div>
   );

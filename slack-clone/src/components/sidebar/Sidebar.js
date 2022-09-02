@@ -60,7 +60,7 @@ export default function Sidebar() {
       <hr />
       <SidebarOption Icon={ExpandMoreIcon} title="channel" />
       <hr />
-      <SidebarOption Icon={AddIcon} title="channel" />
+      <SidebarOption Icon={AddIcon} title="channel" addChannelOption />
       {channels.map((channel) => (
         <SidebarOption title={channel.name} key={channel.id} id={channel.id} />
       ))}
