@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  padding: 20px;
+}
+
+.app_left {
+  flex: 0.9;
 }
 
 .app__header {
