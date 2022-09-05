@@ -5,7 +5,7 @@ export default function Table({ countries }) {
   return (
     <div className="table">
       {countries.map(({ country, cases }) => (
-        <tr>
+        <tr key={country}>
           <td>{country}</td>
           <td>
             <strong>{cases}</strong>

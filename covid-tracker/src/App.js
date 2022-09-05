@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { sortData } from "./components/utils";
 import LineGraph from "./components/LineGraph";
+import "leaflet/dist/leaflet.css";
 
 // MUI imports
 import {
@@ -20,6 +21,8 @@ function App() {
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
+  const [mapCenter, setMapCenter] = useState([33, 65]);
+  const [mapZoom, setMapZoom] = useState(4);
 
   // Fetching worldwide cases on initial render
   useEffect(() => {
@@ -59,8 +62,11 @@ function App() {
     await fetch(url)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setCountry(countryCode);
         setCountryInfo(data);
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+        setMapZoom(5);
       });
   };
 
@@ -104,7 +110,7 @@ function App() {
           />
         </div>
 
-        <Map />
+        <Map center={mapCenter} zoom={mapZoom} />
       </div>
 
       {/* ============= App Right ============ */}

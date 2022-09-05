@@ -92,7 +92,7 @@ export default function LineGraph() {
       .then((res) => res.json())
       .then((data) => {
         const chartData = buildChartData(data);
-        console.log(chartData);
+        // console.log(chartData);
         setData(chartData);
       });
   }, []);
