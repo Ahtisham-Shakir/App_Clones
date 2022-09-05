@@ -21,8 +21,9 @@ function App() {
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
-  const [mapCenter, setMapCenter] = useState([33, 65]);
+  const [mapCenter, setMapCenter] = useState([30, 70]);
   const [mapZoom, setMapZoom] = useState(4);
+  const [mapCountries, setMapCountries] = useState([]);
 
   // Fetching worldwide cases on initial render
   useEffect(() => {
@@ -45,6 +46,7 @@ function App() {
           );
           const sortedData = sortData(data);
           setTableData(sortedData);
+          setMapCountries(data);
         });
     };
     getCountriesData();
@@ -62,11 +64,10 @@ function App() {
     await fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCountry(countryCode);
         setCountryInfo(data);
         setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
-        setMapZoom(5);
+        setMapZoom(4);
       });
   };
 
@@ -110,7 +111,7 @@ function App() {
           />
         </div>
 
-        <Map center={mapCenter} zoom={mapZoom} />
+        <Map countries={mapCountries} center={mapCenter} zoom={mapZoom} />
       </div>
 
       {/* ============= App Right ============ */}
