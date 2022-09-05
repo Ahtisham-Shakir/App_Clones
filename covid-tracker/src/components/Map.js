@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import "./Map.css";
 import { showDataOnMap } from "./utils";
 
-export default function Map({ center, zoom, countries }) {
+export default function Map({ center, zoom, countries, casesType }) {
   return (
     <div className="map">
       <MapContainer key={JSON.stringify(center)} center={center} zoom={zoom}>
@@ -11,7 +11,7 @@ export default function Map({ center, zoom, countries }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {showDataOnMap(countries, "cases")}
+        {showDataOnMap(countries, casesType)}
       </MapContainer>
     </div>
   );

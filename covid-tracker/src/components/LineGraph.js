@@ -68,7 +68,7 @@ const options = {
   },
 };
 
-export default function LineGraph() {
+export default function LineGraph({ casesType, ...props }) {
   const [data, setData] = useState({});
 
   const buildChartData = (data, casesType = "cases") => {
@@ -91,14 +91,13 @@ export default function LineGraph() {
     fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=120")
       .then((res) => res.json())
       .then((data) => {
-        const chartData = buildChartData(data);
-        // console.log(chartData);
+        const chartData = buildChartData(data, casesType);
         setData(chartData);
       });
   }, []);
 
   return (
-    <div className="lineGraph">
+    <div className={props.className}>
       {data?.length > 0 && (
         <Line
           options={options}
