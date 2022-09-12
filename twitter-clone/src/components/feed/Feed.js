@@ -1,6 +1,9 @@
 import React from "react";
-import TweetBox from "../tweetBox/TweetBox";
 import "./Feed.css";
+
+//components imports
+import Post from "../post/Post";
+import TweetBox from "../tweetBox/TweetBox";
 
 export default function Feed() {
   return (
@@ -14,6 +17,7 @@ export default function Feed() {
       <TweetBox />
 
       {/* Posts */}
+      <Post />
     </div>
   );
 }
