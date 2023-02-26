@@ -149,7 +149,7 @@ const Leftbar = () => {
             />
             <Item
               title={"Invoices Balances"}
-              to="/Invoice"
+              to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
