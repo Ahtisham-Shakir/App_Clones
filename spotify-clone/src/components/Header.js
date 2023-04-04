@@ -10,7 +10,10 @@ const Header = () => {
     <div className="header">
       <div className="header__left">
         <SearchIcon />
-        <input placeholder="Search for Artists, Songs" type="text" />
+        <input
+          placeholder="Search for Artists, Songs or Podcasts"
+          type="text"
+        />
       </div>
       <div className="header__right">
         <Avatar src={user?.images[0]?.url} alt="ahtisham" />
